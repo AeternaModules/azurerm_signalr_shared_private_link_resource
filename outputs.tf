@@ -1,3 +1,7 @@
+output "signalr_shared_private_link_resources_id" {
+  description = "Map of id values across all signalr_shared_private_link_resources, keyed the same as var.signalr_shared_private_link_resources"
+  value       = { for k, v in azurerm_signalr_shared_private_link_resource.signalr_shared_private_link_resources : k => v.id }
+}
 output "signalr_shared_private_link_resources_name" {
   description = "Map of name values across all signalr_shared_private_link_resources, keyed the same as var.signalr_shared_private_link_resources"
   value       = { for k, v in azurerm_signalr_shared_private_link_resource.signalr_shared_private_link_resources : k => v.name }
